@@ -8,25 +8,184 @@
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="style.css" type="text/style">
+<style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f8fafc;
+            color: #1e293b;
+            line-height: 1.6;
+        }
+        
+        header {
+            background: linear-gradient(to right, #dc2626, #ea580c);
+            color: white;
+            text-align: center;
+            padding: 2rem 1rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .subtitle {
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            opacity: 0.9;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem 1rem;
+        }
+        
+        .controls {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 2rem;
+            gap: 1rem;
+        }
+        
+        .control-btn {
+            padding: 0.5rem 1.5rem;
+            background-color: #f1f5f9;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        
+        .control-btn.active, .control-btn:hover {
+            background-color: #dc2626;
+            color: white;
+        }
+        
+        .destinations-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+        
+        .destination-card {
+            background-color: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .destination-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .card-image {
+            height: 200px;
+            overflow: hidden;
+        }
+        
+        .card-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .destination-card:hover .card-image img {
+            transform: scale(1.05);
+        }
+        
+        .card-content {
+            padding: 1.5rem;
+        }
+        
+        .card-content h3 {
+            font-size: 1.4rem;
+            margin-bottom: 0.5rem;
+            color: #1e293b;
+        }
+        
+        .location {
+            display: flex;
+            align-items: center;
+            color: #64748b;
+            margin-bottom: 1rem;
+        }
+        
+        .location i {
+            margin-right: 0.5rem;
+        }
+        
+        .description {
+            color: #475569;
+            margin-bottom: 1.5rem;
+        }
+        
+        .rating {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+        
+        .stars {
+            color: #f59e0b;
+            margin-right: 0.5rem;
+        }
+        
+        .footer {
+            text-align: center;
+            padding: 2rem;
+            margin-top: 2rem;
+            background-color: #1e293b;
+            color: white;
+        }
+        
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .controls {
+                flex-wrap: wrap;
+            }
+            
+            .destinations-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+
 </head>
 <body>
 
     <!-- Navbar -->
-
-    <nav class="navbar navbar-expand-lg bg-dark">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#">
+     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="#">
                 <span class="text-tour">Tour</span>
                 <span class="text-guide">Guide</span>
-                <span class="text-india">India</span></a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <form class="search collapse navbar-collapse" role="search">
+                <span class="text-india">India</span>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+ <form class="search collapse navbar-collapse" role="search">
                 <input class="form-control me-2" type="search" placeholder="Search for a place..." aria-label="Search"/>
             </form>
-            <div class="d-flex justify-content-center" id="navbarScroll">
-                <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
+
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
                         <a class="nav-link" aria-current="page" href="#">Home</a>
                     </li>
@@ -62,13 +221,14 @@
                     <li class="nav-item">
                         <a class="nav-link" href="#">Blog</a>
                     </li>
-                </ul>
-                <form class="contact">
+                    <form class="contact">
                     <button class="btn btn-outline-success" type="Contact Us">Contact Us</button>
                 </form>
-            </div>
-        </div>
-    </nav>
+              
+        </ul>
+      </div>
+    </div>
+  </nav>
 
     <!-- Hero Section -->
 
@@ -100,11 +260,194 @@
         <button type="button" class="btn btn-success m-10 p-2">Explore Now</button>
     </div>
 
+    <header>
+        <h1>Incredible India</h1>
+        <p class="subtitle">Discover the most beautiful tourist destinations</p>
+    </header>
+    
+    <div class="container">
+        <div class="controls">
+            <button class="control-btn active">All</button>
+            <button class="control-btn">Historical</button>
+            <button class="control-btn">Beaches</button>
+            <button class="control-btn">Mountains</button>
+            <button class="control-btn">Spiritual</button>
+        </div>
+        
+        <div class="destinations-grid">
+            <!-- Destination 1 -->
+            <div class="destination-card">
+                <div class="card-image">
+                    <img src="https://karryon.com.au/wp-content/uploads/2014/12/shutterstock_120633745.jpg" alt="The iconic white marble mausoleum Taj Mahal with reflective pool in front">
+                </div>
+                <div class="card-content">
+                    <h3>Taj Mahal</h3>
+                    <div class="location">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Agra, Uttar Pradesh</span>
+                    </div>
+                    <p class="description">An ivory-white marble mausoleum and one of the seven wonders of the world, built by Mughal emperor Shah Jahan.</p>
+                    <div class="rating">
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <span>4.9 (12k reviews)</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Destination 2 -->
+            <div class="destination-card">
+                <div class="card-image">
+                    <img src="https://tse2.mm.bing.net/th/id/OIP.8owFcz8tyNVP8zND_gRVCgHaFJ?pid=Api&P=0&h=180" alt="Evening ceremony on the ghats of Varanasi with lamps and devotees">
+                </div>
+                <div class="card-content">
+                    <h3>Varanasi Ghats</h3>
+                    <div class="location">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Varanasi, Uttar Pradesh</span>
+                    </div>
+                    <p class="description">One of the oldest living cities in the world, known for its spiritual significance and beautiful Ganga Aarti ceremony.</p>
+                    <div class="rating">
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                        <span>4.7 (8.5k reviews)</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Destination 3 -->
+            <div class="destination-card">
+                <div class="card-image">
+                    <img src="https://tse2.mm.bing.net/th/id/OIP.PBNEx1qdnBxCXUcxL90naQHaE6?pid=Api&P=0&h=180" alt="Sunny beach in Goa with golden sand and palm trees">
+                </div>
+                <div class="card-content">
+                    <h3>Goa Beaches</h3>
+                    <div class="location">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Goa</span>
+                    </div>
+                    <p class="description">Famous for its pristine beaches, Portuguese heritage, vibrant nightlife and delicious seafood cuisine.</p>
+                    <div class="rating">
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <span>4.8 (15k reviews)</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Destination 4 -->
+            <div class="destination-card">
+                <div class="card-image">
+                    <img src="https://2.bp.blogspot.com/-6462cJoeLeY/V15NrMaruwI/AAAAAAACNCw/7HykZP4dGwcH9RLtnYsK4aHj4UKiZFRRgCLcB/s1600/2.JPG" alt="Serene backwaters of Kerala with houseboats and coconut trees">
+                </div>
+                <div class="card-content">
+                    <h3>Kerala Backwaters</h3>
+                    <div class="location">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Kerala</span>
+                    </div>
+                    <p class="description">A network of interconnected canals, rivers, and lagoons perfect for houseboat cruises and experiencing tranquil nature.</p>
+                    <div class="rating">
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                        <span>4.8 (9.2k reviews)</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Destination 5 -->
+            <div class="destination-card">
+                <div class="card-image">
+                    <img src="https://tse2.mm.bing.net/th/id/OIP.Y6OOUI0qEEs-Dy5aOcRU7QHaE7?pid=Api&P=0&h=180" alt="Amber Fort in Jaipur with majestic architecture and mountain backdrop">
+                </div>
+                <div class="card-content">
+                    <h3>Jaipur Forts</h3>
+                    <div class="location">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Jaipur, Rajasthan</span>
+                    </div>
+                    <p class="description">The Pink City is famous for its stunning forts and palaces showcasing Rajasthani architecture and royal heritage.</p>
+                    <div class="rating">
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <span>4.7 (10k reviews)</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Destination 6 -->
+            <div class="destination-card">
+                <div class="card-image">
+                    <img src="https://ocean6holidays.com/wp-content/uploads/2019/04/tea-gardens-of-darjeeling.jpg" alt="Scenic tea gardens of Darjeeling with Himalayan mountains in background">
+                </div>
+                <div class="card-content">
+                    <h3>Darjeeling</h3>
+                    <div class="location">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>West Bengal</span>
+                    </div>
+                    <p class="description">Famous for its tea plantations, stunning views of Kanchenjunga, and the UNESCO World Heritage Darjeeling Himalayan Railway.</p>
+                    <div class="rating">
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                        <span>4.6 (7.8k reviews)</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="footer">
+        <p>© 2023 Incredible India Tourism. All rights reserved.</p>
+    </div>
 
+    <script>
+        // Simple interactivity for filter buttons
+        document.querySelectorAll('.control-btn').forEach(button => {
+            button.addEventListener('click', function() {
+                document.querySelectorAll('.control-btn').forEach(btn => {
+                    btn.classList.remove('active');
+                });
+                this.classList.add('active');
+                
+                // In a real application, this would filter the destinations
+                // For this demo, we'll just log the filter
+                console.log('Filter selected:', this.textContent);
+            });
+        });
+    </script>
+</body>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
-
-
-
