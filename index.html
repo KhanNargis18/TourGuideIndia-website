@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TourGuideIndia</title>
     <link rel="stylesheet" href="style.css">
-    <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="style.css" type="text/style">
@@ -15,14 +14,12 @@
             padding: 0;
             box-sizing: border-box;
         }
-        /* Make images responsive */
 img {
   max-width: 100%;
   height: auto;
   display: block;
 }
 
-/* Hero text responsive */
 .carousel-text {
   position: absolute;
   top: 50%;
@@ -39,14 +36,12 @@ img {
   font-size: clamp(1rem, 3vw, 1.5rem);
 }
 
-/* Destination grid responsive */
 .destinations-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 1.5rem;
 }
 
-/* Guide cards responsive */
 .guide-card {
   min-height: auto;
 }
@@ -55,12 +50,10 @@ img {
   height: 100px;
 }
 
-/* Contact section responsive */
 .contact p, .contact a {
   font-size: clamp(0.9rem, 2vw, 1.1rem);
 }
 
-/* Footer full width fix */
 .footer {
   width: 100%;
   background-color: #1e293b;
@@ -71,7 +64,6 @@ img {
   font-size: clamp(0.8rem, 1.5vw, 1rem);
 }
 
-/* Navbar responsiveness */
 @media (max-width: 992px) {
   .search {
     width: 100%;
@@ -290,12 +282,69 @@ img {
       border-radius: 50%;
       margin: 0 auto 15px;
     }
+
+
+    .navbar-toggler {
+    position: relative;
+    width: 40px;
+    height: 30px;
+    border: none;
+    background: none;
+    outline: none;
+    cursor: pointer;
+}
+
+.navbar-toggler-icon {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 4px;
+    background-color: white;
+    border-radius: 2px;
+    transition: all 0.4s ease;
+}
+
+.navbar-toggler-icon::before,
+.navbar-toggler-icon::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 4px;
+    background-color: white;
+    border-radius: 2px;
+    transition: all 0.4s ease;
+}
+
+.navbar-toggler-icon::before {
+    top: -10px;
+}
+
+.navbar-toggler-icon::after {
+    bottom: -10px;
+}
+
+/* When toggled */
+.navbar-toggler.collapsed .navbar-toggler-icon {
+    background-color: white; /* Middle bar */
+}
+
+.navbar-toggler:not(.collapsed) .navbar-toggler-icon {
+    background-color: transparent; /* Hide middle bar */
+}
+
+.navbar-toggler:not(.collapsed) .navbar-toggler-icon::before {
+    transform: rotate(45deg) translate(7px, 7px);
+}
+
+.navbar-toggler:not(.collapsed) .navbar-toggler-icon::after {
+    transform: rotate(-45deg) translate(7px, -7px);
+}
+
     </style>
 
 </head>
 <body>
 
-    <!-- Navbar -->
      <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
     <div class="container">
       <a class="navbar-brand" href="#">
@@ -303,13 +352,16 @@ img {
                 <span class="text-guide">Guide</span>
                 <span class="text-india">India</span>
       </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-        <span class="navbar-toggler-icon"></span>
-      </button>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+</button>
+
 
  <form class="search collapse navbar-collapse" role="search">
-                <input class="form-control me-2" type="search" placeholder="Search for a place..." aria-label="Search"/>
-            </form>
+    <a href="#destination-card" style="text-decoration: none;">
+    <input id="searchInput" class="form-control me-2" type="search" placeholder="Search for a place..." aria-label="Search"/></a>
+</form>
+
 
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ms-auto">
@@ -357,7 +409,6 @@ img {
     </div>
   </nav>
 
-    <!-- Hero Section -->
 
     <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000" data-bs-pause="hover">
         <div class="carousel-inner" >
@@ -391,23 +442,24 @@ img {
         <h1>TourGuideIndia</h1>
         <p class="subtitle">Discover the most beautiful tourist destinations</p>
     </header>
+
     
     <div class="container ">
         <div class="controls">
-            <button class="control-btn active">All</button>
-            <button class="control-btn">Historical</button>
-            <button class="control-btn">Beaches</button>
-            <button class="control-btn">Mountains</button>
-            <button class="control-btn">Spiritual</button>
+            <button class="btn btn-outline-dark control-btn active">All</button>
+            <button class="btn btn-outline-dark control-btn">Historical</button>
+            <button class="btn btn-outline-dark control-btn">Beaches</button>
+            <button class="btn btn-outline-dark control-btn">Mountains</button>
+            <button class="btn btn-outline-dark control-btn">Spiritual</button>
         </div>
         
-        <div class="destinations-grid navbar-expand-lg">
-            <!-- Destination 1 -->
-            <div class="destination-card">
+        <div class="destinations-grid">
+            <div class="destination-card" data-category="historical">
+                <a href="taj.html" style="text-decoration: none;">
                 <div class="card-image">
                     <img src="https://karryon.com.au/wp-content/uploads/2014/12/shutterstock_120633745.jpg" alt="The iconic white marble mausoleum Taj Mahal with reflective pool in front">
                 </div>
-                <div class="card-content">
+                <div class="card-title">
                     <h3>Taj Mahal</h3>
                     <div class="location">
                         <i class="fas fa-map-marker-alt"></i>
@@ -424,15 +476,15 @@ img {
                         </div>
                         <span>4.9 (12k reviews)</span>
                     </div>
+                    </a>
                 </div>
             </div>
             
-            <!-- Destination 2 -->
-            <div class="destination-card">
+            <div class="destination-card" data-category="spiritual">
                 <div class="card-image">
-                    <img src="https://tse2.mm.bing.net/th/id/OIP.8owFcz8tyNVP8zND_gRVCgHaFJ?pid=Api&P=0&h=180" alt="Evening ceremony on the ghats of Varanasi with lamps and devotees">
+                    <a href="varanasi.html" style="text-decoration: none;"><img src="https://tse2.mm.bing.net/th/id/OIP.8owFcz8tyNVP8zND_gRVCgHaFJ?pid=Api&P=0&h=180" alt="Evening ceremony on the ghats of Varanasi with lamps and devotees">
                 </div>
-                <div class="card-content">
+                <div class="card-title">
                     <h3>Varanasi Ghats</h3>
                     <div class="location">
                         <i class="fas fa-map-marker-alt"></i>
@@ -448,16 +500,17 @@ img {
                             <i class="fas fa-star-half-alt"></i>
                         </div>
                         <span>4.7 (8.5k reviews)</span>
+                        </a>
                     </div>
                 </div>
             </div>
             
-            <!-- Destination 3 -->
-            <div class="destination-card">
+            <div class="destination-card" id="destination-card" data-category="beaches">
                 <div class="card-image">
+                    <a href="goa.html" style="text-decoration: none;">
                     <img src="https://tse2.mm.bing.net/th/id/OIP.PBNEx1qdnBxCXUcxL90naQHaE6?pid=Api&P=0&h=180" alt="Sunny beach in Goa with golden sand and palm trees">
                 </div>
-                <div class="card-content">
+                <div class="card-title">
                     <h3>Goa Beaches</h3>
                     <div class="location">
                         <i class="fas fa-map-marker-alt"></i>
@@ -473,16 +526,17 @@ img {
                             <i class="fas fa-star"></i>
                         </div>
                         <span>4.8 (15k reviews)</span>
+                        </a>
                     </div>
                 </div>
             </div>
             
-            <!-- Destination 4 -->
-            <div class="destination-card">
+            <div class="destination-card" data-category="beaches">
                 <div class="card-image">
+                    <a href="kerla.html" style="text-decoration: none;">
                     <img src="https://2.bp.blogspot.com/-6462cJoeLeY/V15NrMaruwI/AAAAAAACNCw/7HykZP4dGwcH9RLtnYsK4aHj4UKiZFRRgCLcB/s1600/2.JPG" alt="Serene backwaters of Kerala with houseboats and coconut trees">
                 </div>
-                <div class="card-content">
+                <div class="card-title">
                     <h3>Kerala Backwaters</h3>
                     <div class="location">
                         <i class="fas fa-map-marker-alt"></i>
@@ -498,16 +552,17 @@ img {
                             <i class="fas fa-star-half-alt"></i>
                         </div>
                         <span>4.8 (9.2k reviews)</span>
+                        </a>
                     </div>
                 </div>
             </div>
             
-            <!-- Destination 5 -->
-            <div class="destination-card">
+            <div class="destination-card" data-category="historical">
                 <div class="card-image">
+                    <a href="jaipur.html" style="text-decoration: none;">
                     <img src="https://tse2.mm.bing.net/th/id/OIP.Y6OOUI0qEEs-Dy5aOcRU7QHaE7?pid=Api&P=0&h=180" alt="Amber Fort in Jaipur with majestic architecture and mountain backdrop">
                 </div>
-                <div class="card-content">
+                <div class="card-title">
                     <h3>Jaipur Forts</h3>
                     <div class="location">
                         <i class="fas fa-map-marker-alt"></i>
@@ -523,16 +578,17 @@ img {
                             <i class="fas fa-star"></i>
                         </div>
                         <span>4.7 (10k reviews)</span>
+                        </a>
                     </div>
                 </div>
             </div>
             
-            <!-- Destination 6 -->
-            <div class="destination-card">
+            <div class="destination-card" data-category="mountains">
                 <div class="card-image">
+                    <a href="darjeeling.html" style="text-decoration: none;">
                     <img src="https://ocean6holidays.com/wp-content/uploads/2019/04/tea-gardens-of-darjeeling.jpg" alt="Scenic tea gardens of Darjeeling with Himalayan mountains in background">
                 </div>
-                <div class="card-content">
+                <div class="card-title">
                     <h3>Darjeeling</h3>
                     <div class="location">
                         <i class="fas fa-map-marker-alt"></i>
@@ -548,14 +604,24 @@ img {
                             <i class="fas fa-star-half-alt"></i>
                         </div>
                         <span>4.6 (7.8k reviews)</span>
+                        </a>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- Guides Section -->
-  <section id="guides" class="container-fluid py-5 navbar-expand-lg">
+
+<section id="package" class="destination-card container-fluid py-5 ">
+    <h2 class="text-center mb-4 fw-bold">
+        <h3 class="card-title">Taj Mahal</h3>
+        <p class="description">Package Details </p><button><a href="tajpackage.html">  Verify Our Details</a></button>
+    </h2>
+
+</section>
+
+
+  <section id="guides" class="container-fluid py-5 ">
     <h2 class="text-center mb-4 fw-bold">Meet Our Guides</h2>
     <div class="row g-4">
       <div class="col-md-4">
@@ -611,20 +677,53 @@ img {
     </div>
 
     <script>
-        // Simple interactivity for filter buttons
         document.querySelectorAll('.control-btn').forEach(button => {
             button.addEventListener('click', function() {
                 document.querySelectorAll('.control-btn').forEach(btn => {
                     btn.classList.remove('active');
                 });
                 this.classList.add('active');
-                
-                // In a real application, this would filter the destinations
-                // For this demo, we'll just log the filter
                 console.log('Filter selected:', this.textContent);
             });
         });
-    </script>
+const searchInput = document.getElementById('searchInput');
+const destinationCards = document.querySelectorAll('.destination-card');
+
+searchInput.addEventListener('input', () => {
+    const filter = searchInput.value.toLowerCase();
+
+    destinationCards.forEach(card => {
+        const title = card.querySelector('h3').textContent.toLowerCase();
+        const description = card.querySelector('.description').textContent.toLowerCase();
+
+        if(title.includes(filter) || description.includes(filter)) {
+            card.style.display = 'block';
+        } else {
+            card.style.display = 'none';
+        }
+    });
+});
+
+  const buttons = document.querySelectorAll('.control-btn');
+  const cards = document.querySelectorAll('.destination-card');
+
+  buttons.forEach(button => {
+    button.addEventListener('click', function() {
+      buttons.forEach(btn => btn.classList.remove('active'));
+      this.classList.add('active');
+
+      const filter = this.textContent.toLowerCase();
+
+      cards.forEach(card => {
+        const category = card.getAttribute('data-category');
+        card.style.display = (filter === 'all' || category === filter) ? 'block' : 'none';
+      });
+    });
+  });
+
+
+</script>
+
 </body>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
