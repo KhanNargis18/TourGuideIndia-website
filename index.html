@@ -24,7 +24,7 @@
         }
         
         header {
-            background: linear-gradient(to right, #dc2626, #ea580c);
+            background: linear-gradient(to right, #9926dc, #0cd0ea);
             color: white;
             text-align: center;
             padding: 2rem 1rem;
@@ -163,6 +163,28 @@
                 grid-template-columns: 1fr;
             }
         }
+
+        .foot a{
+            text-decoration: none;
+            color: #f1f5f9;
+        }
+        .c{
+            background: linear-gradient(140deg,rgb(39, 39, 51) 40%, rgb(32, 16, 32) 60%);
+            color: #f1f5f9;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            border-radius: 20px;
+        }
+        .c a{
+            text-decoration: none;
+            color: #f1f5f9;
+        }
+        .guide-card img {
+      width: 120px;
+      height: 120px;
+      object-fit: cover;
+      border-radius: 50%;
+      margin: 0 auto 15px;
+    }
     </style>
 
 </head>
@@ -261,11 +283,11 @@
     </div>
 
     <header>
-        <h1>Incredible India</h1>
+        <h1>TourGuideIndia</h1>
         <p class="subtitle">Discover the most beautiful tourist destinations</p>
     </header>
     
-    <div class="container">
+    <div class="container ">
         <div class="controls">
             <button class="control-btn active">All</button>
             <button class="control-btn">Historical</button>
@@ -426,7 +448,44 @@
             </div>
         </div>
     </div>
-    <section id="contact" class="contact text-center">
+
+    <!-- Guides Section -->
+  <section id="guides" class="container py-5">
+    <h2 class="text-center mb-4 fw-bold">Meet Our Guides</h2>
+    <div class="row g-4">
+      <div class="col-md-4">
+        <div class="card guide-card text-center shadow p-3">
+          <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Guide 1">
+          <h5 class="fw-bold">AAA AAA</h5>
+          <p>History Expert</p>
+          <p>Email: a@1.com</p>
+          <p>Phone: +91 9876543210</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card guide-card text-center shadow p-3">
+          <img src="https://randomuser.me/api/portraits/men/33.jpg" alt="Guide 2">
+          <h5 class="fw-bold">BBB BBB</h5>
+          <p>Adventure Specialist</p>
+          <p>Email: b@2.com</p>
+          <p>Phone: +91 1235467890</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card guide-card text-center shadow p-3">
+          <img src="https://randomuser.me/api/portraits/men/34.jpg" alt="Guide 3">
+          <h5 class="fw-bold">CCC CCC</h5>
+          <p>Cultural Tours</p>
+          <p>Email: c@3.com</p>
+          <p>Phone: +911234567890</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+    <section id="contact" class="contact text-center c">
     <div class="container">
       <h2 class="fw-bold mb-4">Contact Us</h2>
       <p>Email: <a href="mailto:info@incredibleindia.com">info@incredibleindia.com</a></p>
@@ -440,6 +499,7 @@
   </section>
 
     <div class="footer">
+        
     <footer class="text-center">
     <div class="container foot">
       <p>© 2025 TourGuideIndia | All Rights Reserved</p>
@@ -467,4 +527,3 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
-
