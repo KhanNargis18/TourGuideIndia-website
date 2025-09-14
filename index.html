@@ -339,7 +339,24 @@ img {
 .navbar-toggler:not(.collapsed) .navbar-toggler-icon::after {
     transform: rotate(-45deg) translate(7px, -7px);
 }
-
+p{
+    padding: 10px;
+}
+h1{
+    padding: 10px;
+}
+h2{
+    padding: 10px;
+}
+h3{
+    padding: 10px;
+}
+h4{
+    padding: 10px;
+}
+i span{
+    padding: 10px;
+}
     </style>
 
 </head>
@@ -355,21 +372,22 @@ img {
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
 </button>
-
-
- <form class="search d-flex ms-auto" role="search" onsubmit="return false;">
+<form class="search d-flex ms-auto" role="search" onsubmit="return false;">
   <input id="searchInput" class="form-control me-2" type="search" placeholder="Search for a place..." aria-label="Search">
 </form>
+
+
+
 
 
 
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="#">Home</a>
+                        <a class="nav-link py-3" aria-current="page" href="#">Home</a>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <a class="nav-link dropdown-toggle py-3" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             Tour Packages
                         </a>
                         <ul class="dropdown-menu">
@@ -383,7 +401,7 @@ img {
                         </ul>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <a class="nav-link dropdown-toggle py-3" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             Destinations
                         </a>
                         <ul class="dropdown-menu">
@@ -395,10 +413,10 @@ img {
                         </ul>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">About Us</a>
+                        <a class="nav-link py-3" href="#">About Us</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Blog</a>
+                        <a class="nav-link py-3" href="#">Blog</a>
                     </li>
                     
                    <button class="btn btn-outline-success" type="Contact Us"><a class="nav-link" href="#contact">Contact Us</a> </button>
@@ -433,8 +451,8 @@ img {
         </div>
     </div>
     <div class="carousel-text">
-        <h1>Travel With the Best Tour Operators in India</h1>
-        <h4>Be it weekend gateways in India adventures, we,ve got you covered from tickets to hotels.</h4>
+        <h1 class="py-3">Travel With the Best Tour Operators in India</h1>
+        <h4 class="py-3">Be it weekend gateways in India adventures, we,ve got you covered from tickets to hotels.</h4>
         <button type="button" class="btn btn-success m-10 p-2">Explore Now</button>
     </div>
 
@@ -453,6 +471,7 @@ img {
             <button class="btn btn-outline-dark control-btn">Spiritual</button>
         </div>
         
+        
         <div class="destinations-grid">
             <div class="destination-card" data-category="historical">
                 <a href="taj.html" style="text-decoration: none;">
@@ -463,9 +482,9 @@ img {
                     <h3>Taj Mahal</h3>
                     <div class="location">
                         <i class="fas fa-map-marker-alt"></i>
-                        <span>Agra, Uttar Pradesh</span>
+                        <span class="py-3">Agra, Uttar Pradesh</span>
                     </div>
-                    <p class="description">An ivory-white marble mausoleum and one of the seven wonders of the world, built by Mughal emperor Shah Jahan.</p>
+                    <p class="description py-3">An ivory-white marble mausoleum and one of the seven wonders of the world, built by Mughal emperor Shah Jahan.</p>
                     <div class="rating">
                         <div class="stars">
                             <i class="fas fa-star"></i>
@@ -488,9 +507,9 @@ img {
                     <h3>Varanasi Ghats</h3>
                     <div class="location">
                         <i class="fas fa-map-marker-alt"></i>
-                        <span>Varanasi, Uttar Pradesh</span>
+                        <span class="py-3">Varanasi, Uttar Pradesh</span>
                     </div>
-                    <p class="description">One of the oldest living cities in the world, known for its spiritual significance and beautiful Ganga Aarti ceremony.</p>
+                    <p class="description py-3">One of the oldest living cities in the world, known for its spiritual significance and beautiful Ganga Aarti ceremony.</p>
                     <div class="rating">
                         <div class="stars">
                             <i class="fas fa-star"></i>
@@ -514,9 +533,9 @@ img {
                     <h3>Goa Beaches</h3>
                     <div class="location">
                         <i class="fas fa-map-marker-alt"></i>
-                        <span>Goa</span>
+                        <span class="py-3">Goa</span>
                     </div>
-                    <p class="description">Famous for its pristine beaches, Portuguese heritage, vibrant nightlife and delicious seafood cuisine.</p>
+                    <p class="description py-3">Famous for its pristine beaches, Portuguese heritage, vibrant nightlife and delicious seafood cuisine.</p>
                     <div class="rating">
                         <div class="stars">
                             <i class="fas fa-star"></i>
@@ -537,12 +556,12 @@ img {
                     <img src="https://2.bp.blogspot.com/-6462cJoeLeY/V15NrMaruwI/AAAAAAACNCw/7HykZP4dGwcH9RLtnYsK4aHj4UKiZFRRgCLcB/s1600/2.JPG" alt="Serene backwaters of Kerala with houseboats and coconut trees">
                 </div>
                 <div class="card-title">
-                    <h3>Kerala Backwaters</h3>
+                    <h3 class="py-3">Kerala Backwaters</h3>
                     <div class="location">
                         <i class="fas fa-map-marker-alt"></i>
-                        <span>Kerala</span>
+                        <span class="py-3">Kerala</span>
                     </div>
-                    <p class="description">A network of interconnected canals, rivers, and lagoons perfect for houseboat cruises and experiencing tranquil nature.</p>
+                    <p class="description py-3">A network of interconnected canals, rivers, and lagoons perfect for houseboat cruises and experiencing tranquil nature.</p>
                     <div class="rating">
                         <div class="stars">
                             <i class="fas fa-star"></i>
@@ -566,9 +585,9 @@ img {
                     <h3>Jaipur Forts</h3>
                     <div class="location">
                         <i class="fas fa-map-marker-alt"></i>
-                        <span>Jaipur, Rajasthan</span>
+                        <span class="py-3">Jaipur, Rajasthan</span>
                     </div>
-                    <p class="description">The Pink City is famous for its stunning forts and palaces showcasing Rajasthani architecture and royal heritage.</p>
+                    <p class="description py-3">The Pink City is famous for its stunning forts and palaces showcasing Rajasthani architecture and royal heritage.</p>
                     <div class="rating">
                         <div class="stars">
                             <i class="fas fa-star"></i>
@@ -592,9 +611,9 @@ img {
                     <h3>Darjeeling</h3>
                     <div class="location">
                         <i class="fas fa-map-marker-alt"></i>
-                        <span>West Bengal</span>
+                        <span class="py-3">West Bengal</span>
                     </div>
-                    <p class="description">Famous for its tea plantations, stunning views of Kanchenjunga, and the UNESCO World Heritage Darjeeling Himalayan Railway.</p>
+                    <p class="description py-3">Famous for its tea plantations, stunning views of Kanchenjunga, and the UNESCO World Heritage Darjeeling Himalayan Railway.</p>
                     <div class="rating">
                         <div class="stars">
                             <i class="fas fa-star"></i>
