@@ -357,10 +357,10 @@ img {
 </button>
 
 
- <form class="search collapse navbar-collapse" role="search">
-    <a href="#destination-card" style="text-decoration: none;">
-    <input id="searchInput" class="form-control me-2" type="search" placeholder="Search for a place..." aria-label="Search"/></a>
+ <form class="search d-flex ms-auto" role="search" onsubmit="return false;">
+  <input id="searchInput" class="form-control me-2" type="search" placeholder="Search for a place..." aria-label="Search">
 </form>
+
 
 
       <div class="collapse navbar-collapse" id="navbarNav">
@@ -681,20 +681,21 @@ img {
 const searchInput = document.getElementById('searchInput');
 const destinationCards = document.querySelectorAll('.destination-card');
 
-searchInput.addEventListener('input', () => {
-    const filter = searchInput.value.toLowerCase();
+searchInput.addEventListener('keyup', () => {
+    const filter = searchInput.value.toLowerCase().trim();
 
     destinationCards.forEach(card => {
         const title = card.querySelector('h3').textContent.toLowerCase();
         const description = card.querySelector('.description').textContent.toLowerCase();
 
-        if(title.includes(filter) || description.includes(filter)) {
-            card.style.display = 'block';
+        if (title.includes(filter) || description.includes(filter)) {
+            card.style.display = "block";
         } else {
-            card.style.display = 'none';
+            card.style.display = "none";
         }
     });
 });
+
 
   const buttons = document.querySelectorAll('.control-btn');
   const cards = document.querySelectorAll('.destination-card');
