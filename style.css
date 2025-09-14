@@ -4,13 +4,6 @@
     box-sizing: border-box;
 }
 
-.navbar-brand{
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    font-size: larger;
-    font-weight: bold;
-    padding-left: 30vh;
-    padding-right: 10vh;
-}
 .search{
     padding-right: 10vh;
 }
@@ -72,4 +65,42 @@
 .carousel-text h1{
     font-family: Georgia, 'Times New Roman', Times, serif;
     font-weight: bolder;
+}
+
+.text-tour{
+    color: orange;
+}
+.text-guide{
+    color: white;
+}
+.text-india{
+    color: green;
+}
+
+/* Custom animation for fade effect */
+.carousel-item{
+    transition: transform 0.8s ease, opacity 0.8 ease;
+}
+.carousel-item img{
+    height: 100vh;
+    object-fit: cover; /* make images cover full viewport height */
+    object-position: top;
+}
+.carousel-inner{
+    position: relative;
+}
+.carousel-text{
+    position: absolute;
+    top: 50vh;
+    left: 100vh;
+    transform: translate(-50%, -50%);
+    color: white;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+}
+.carousel-text h1{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-weight: bolder;
+
 }
