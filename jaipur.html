@@ -7,157 +7,189 @@
 <link rel="stylesheet" href="style.css">
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
 <style>
-    body{
-        background: linear-gradient(150deg, blue 40%, purple 60%);
-        font-weight: bold;
-        color: aliceblue;
-    }
-  .Heading{
+  body {
+      background: linear-gradient(150deg, rgb(57, 57, 94) 40%, rgb(253, 6, 200) 60%);
+    font-weight: bold;
+    color: aliceblue;
+  }
+  .Heading {
     border-radius: 20px;
   }
-  
-  img{
+  img {
     border-radius: 10px;
   }
+  .carousel-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .carousel-text .btn {
+    padding: 12px 25px;
+    font-size: 18px;
+    background: linear-gradient(to right, #ff7e5f, #feb47b);
+    border: none;
+    border-radius: 10px;
+    color: white;
+  }
+  .contact-container {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+    width: 90%;
+    max-width: 500px;
+  }
+  .contact .container {
+    display: flex;  
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+  }
+  input, textarea {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    resize: none;
+  }
   
-.contact-container {
-      background: white;
-      padding: 30px;
-      border-radius: 12px;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.2);
-      width: 90%;
-      max-width: 500px;
-    }
-    .contact .container {
-  display: flex;  
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-}
-
-
-    h2 {
-      text-align: center;
-      margin-bottom: 20px;
-      color: #333;
+    .tour-details ul {
+      padding-left: 0;
     }
 
-    input, textarea {
-      width: 100%;
-      padding: 12px;
-      margin: 10px 0;
-      border: 1px solid #ccc;
-      border-radius: 8px;
-      resize: none;
+    .tour-details ul li {
+      padding: 8px 0;
+      list-style: none;
     }
 
-    .contact button{
-        padding: 10px;
-        background: linear-gradient(to right, blue , purple);
-        border-radius: 10px;
-        border: none;
-        color: white;
-
+    .tour-details ul li::before {
+      content: "\f00c";
+      font-family: "Font Awesome 5 Free";
+      font-weight: 900;
+      margin-right: 10px;
+      color: #ffd700;
     }
-
-
-
-    @media (max-width: 480px) {
-      .contact-container {
-        padding: 20px;
-      }
+  .contact button {
+    padding: 10px;
+    background: linear-gradient(to right, blue , purple);
+    border-radius: 10px;
+    border: none;
+    color: white;
+  }
+    iframe {
+      border-radius: 10px;
+      margin-top: 20px;
     }
-    .nav-link li{
-        padding: 10px;
-        width: 10px;
+  @media (max-width: 480px) {
+    .contact-container {
+      padding: 20px;
     }
+  }
 </style>
 </head>
 <body>
 
+<!-- Navbar -->
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-    <div class="container">
-      <a class="navbar-brand" href="#">
-                <span class="text-tour">Tour</span>
-                <span class="text-guide">Guide</span>
-                <span class="text-india">India</span>
-      </a>
-
-<button class="navbar-toggler" type="button" data-bs-toggle ="collapse" data-bs-target="#navbarNav">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ms-auto">
-                <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-                <li class="nav-item"><a class="nav-link" href="index.html#guides">Guides</a></li>
-                <li class="nav-item"><a class="nav-link" href="index.html#contact">Contact</a></li>
-            </ul>
-        </div>
+  <div class="container">
+    <a class="navbar-brand" href="#">
+      <span class="text-tour">Tour</span>
+      <span class="text-guide">Guide</span>
+      <span class="text-india">India</span>
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="index.html#guides">Guides</a></li>
+        <li class="nav-item"><a class="nav-link" href="index.html#contact">Contact</a></li>
+      </ul>
     </div>
+  </div>
 </nav>
 
-<div class="container-fluid p-0">
-<img src="assets/images/jaipur.jpg" width="400" height="400" class="img-fluid w-100" alt="Jaipur Forts">
-<div class="text-center p-4 bg-dark text-white Heading">
-<h1>Jaipur Forts</h1>
-<p>Jaipur, Rajasthan</p>
-</div>
+<!-- Hero Section -->
+<div class="container-fluid p-0 position-relative">
+  <img src="assets/images/jaipur.jpg" class="img-fluid w-100" alt="Jaipur Forts">
+  <div class="carousel-text">
+    <a href="#about" class="btn">Explore Now</a>
+  </div>
+  <div class="text-center p-4 bg-dark text-white Heading">
+    <h1>Jaipur Forts</h1>
+    <p>Jaipur, Rajasthan</p>
+  </div>
 </div>
 
+<!-- About Section -->
+<div id="about" class="container my-5 tour-details">
+  <h2>About Jaipur</h2>
+  <p>The Pink City is famous for its stunning forts and palaces showcasing Rajasthani architecture and royal heritage.</p>
+
+  <h3 style="color: #000;">Tour Package Includes</h3>
+  <ul>
+    <li>Visit to Amber Fort, City Palace & Hawa Mahal</li>
+    <li>Guided heritage walk in Jaipur</li>
+    <li>Hotel stay and breakfast</li>
+    <li>Local Rajasthani meals</li>
+    <li>Transportation within Jaipur</li>
+  </ul>
+
+  <h3 style="color: #000;">Price & Charges</h3>
+  <ul>
+    <li>Hotel Stay (per night): ₹3,000 - ₹5,500</li>
+    <li>Meals (per day): ₹1,000 - ₹1,500</li>
+    <li>Entry Fees & Guide Charges: ₹1,000 per person</li>
+    <li>Total Estimated Package: ₹5,000 - ₹8,000 per person (2 days)</li>
+  </ul>
+
+  <h3 style="color: #000;">Itinerary</h3>
+  <p><strong>Day 1:</strong> Arrival at Jaipur, check-in, visit Amber Fort, Hawa Mahal in evening.</p>
+  <p><strong>Day 2:</strong> City Palace, local markets, depart.</p>
+
+</div>
+
+<!-- Location Map -->
 <div class="container my-5">
-<h2>About Jaipur</h2>
-<p>The Pink City is famous for its stunning forts and palaces showcasing Rajasthani architecture and royal heritage.</p>
-
-<h3>Tour Package Includes</h3>
-<ul>
-<li>Visit to Amber Fort, City Palace & Hawa Mahal</li>
-<li>Guided heritage walk in Jaipur</li>
-<li>Hotel stay and breakfast</li>
-<li>Local Rajasthani meals</li>
-<li>Transportation within Jaipur</li>
-</ul>
-
-<h3>Price & Charges</h3>
-<ul>
-<li>Hotel Stay (per night): ₹3,000 - ₹5,500</li>
-<li>Meals (per day): ₹1,000 - ₹1,500</li>
-<li>Entry Fees & Guide Charges: ₹1,000 per person</li>
-<li>Total Estimated Package: ₹5,000 - ₹8,000 per person (2 days)</li>
-</ul>
-
-<h3>Itinerary</h3>
-<p><strong>Day 1:</strong> Arrival at Jaipur, check-in, visit Amber Fort, Hawa Mahal in evening.</p>
-<p><strong>Day 2:</strong> City Palace, local markets, depart.</p>
-
-<div class="text-center my-4">
-<a href="#contact" class="btn btn-success btn-lg">Book This Tour</a>
-</div>
+  <h2 class="text-center text-white">Location</h2>
+  <div class="ratio ratio-16x9">
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14465.417156141024!2d75.85133!3d26.98547!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x396db5f24b68f5f5%3A0xf2d0f10f19a8dbe5!2sAmber%20Fort%2C%20Jaipur!5e0!3m2!1sen!2sin!4v1705040000000!5m2!1sen!2sin" 
+      width="250" height="250" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+  </div>
 </div>
 
-   <section id="contact" class="contact navbar-expand-lg text-center c">
-    <div class="container">
+<!-- Contact Section -->
+<section id="contact" class="contact text-center my-5">
+      <div class="container">
       <h2 class="fw-bold mb-4" style="color: #f1f5f9;">Contact Us</h2>
       <p>Email: <a href="mailto:info@incredibleindia.com">info@incredibleindia.com</a></p>
       <p>Phone: +91 1234567890</p>
-      
-  <div class="contact-container" id="contact">
-    <h2>Contact Us</h2>
-    <form id="contactForm justify-content-center">
-      <input type="text" id="name" placeholder="Your Name" required>
-      <input type="email" id="email" placeholder="Your Email" required>
-      <input type="text" id="subject" placeholder="Subject" required>
-      <textarea id="message" rows="5" placeholder="Your Message" required></textarea>
-      <button type="submit">Send Message</button><br><br><br>
-
-
+  <div class="container">
+    <div class="contact-container">
+      <h2>Contact Us</h2>
+      <form id="contactForm">
+        <input type="text" id="name" placeholder="Your Name" required>
+        <input type="email" id="email" placeholder="Your Email" required>
+        <input type="text" id="subject" placeholder="Subject" required>
+        <textarea id="message" rows="5" placeholder="Your Message" required></textarea>
+        <button type="submit">Send Message</button>
+      </form>
     </div>
-    </form>
+  </div>
 </section>
- <!-- Footer -->
-  <footer class="bg-dark text-white text-center py-3">
-    <p>© 2025 TourGuideIndia | All Rights Reserved</p>
-  </footer>
 
+<!-- Footer -->
+<footer class="bg-dark text-white text-center py-3">
+  <p>© 2025 TourGuideIndia | All Rights Reserved</p>
+</footer>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
 </body>
