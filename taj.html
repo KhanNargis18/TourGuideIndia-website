@@ -11,7 +11,7 @@
     
 <style>
     body{
-        background: linear-gradient(150deg, blue 40%, purple 60%);
+      background: linear-gradient(150deg, rgb(57, 57, 94) 40%, rgb(253, 6, 200) 60%);
         font-weight: bold;
         color: aliceblue;
     }
@@ -63,6 +63,46 @@
         color: white;
 
     }
+    .btn{
+      background-color: #333;
+      color: aliceblue;
+      padding: 10px;
+      border: none;
+
+    }
+    .btn:hover{
+      background-color: rgb(0, 255, 170);
+      color: black;
+    }
+    .tour-details ul {
+      padding-left: 0;
+    }
+
+    .tour-details ul li {
+      padding: 8px 0;
+      list-style: none;
+    }
+
+    .tour-details ul li::before {
+      content: "\f00c";
+      font-family: "Font Awesome 5 Free";
+      font-weight: 900;
+      margin-right: 10px;
+      color: #ffd700;
+    }
+    .carousel-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.carousel-text .btn {
+  font-size: 1.2rem;
+  padding: 10px 20px;
+}
+
 
 
 
@@ -103,8 +143,13 @@
 </nav>
 
 <!-- Hero Section -->
-<div class="container-fluid p-0">
+<div class="container-fluid p-0 position-relative">
     <img src="assets/images/pexels-sudipta-1603650.jpg" class="img-fluid w-100" alt="Taj Mahal">
+    <div class="carousel-text">
+        <button type="button" class="btn btn-success">
+            <a href="#taj" style="text-decoration: none; color:white;">Explore Now</a>
+        </button>
+    </div>
     <div class="text-center p-4 bg-dark text-white Heading">
         <h1>Taj Mahal</h1>
         <p>Agra, Uttar Pradesh</p>
@@ -115,11 +160,11 @@
 <!-- ... previous code above remains the same ... -->
 
 <!-- Package Details -->
-<div class="container my-5">
+<div class="container my-5 tour-details my-5" id="taj">
     <h2>About Taj Mahal</h2>
     <p>The Taj Mahal is an ivory-white marble mausoleum and one of the seven wonders of the world, built by Mughal emperor Shah Jahan. It's a UNESCO World Heritage Site and a symbol of love.</p>
 
-    <h3>Tour Package Includes</h3>
+    <h3 style="color: black;">Tour Package Includes</h3>
     <ul>
         <li>Guided tour of Taj Mahal</li>
         <li>Visit to Agra Fort</li>
@@ -128,7 +173,7 @@
         <li>Optional sunset photography tour</li>
     </ul>
 
-    <h3>Price & Charges</h3>
+    <h3 style="color: black;">Price & Charges</h3>
     <ul>
         <li>Hotel Stay (per night): ₹3,500 - ₹5,000</li>
         <li>Meals (per day): ₹1,000 - ₹1,500</li>
@@ -136,14 +181,10 @@
         <li>Total Estimated Package: ₹6,000 - ₹7,700 per person (3 days)</li>
     </ul>
 
-    <h3>Itinerary</h3>
+    <h3 style="color: black;">Itinerary</h3>
     <p><strong>Day 1:</strong> Arrival at Agra, check-in hotel, visit Taj Mahal in the evening.</p>
     <p><strong>Day 2:</strong> Explore Agra Fort, local markets, and optional sunset at Mehtab Bagh.</p>
     <p><strong>Day 3:</strong> Departure.</p>
-
-    <div class="text-center my-4">
-        <a href="#contact" class="btn btn-success btn-lg">Book This Tour</a>
-    </div>
 </div>
 
 <!-- Contact Section -->
