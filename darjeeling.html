@@ -10,7 +10,7 @@
   <link rel="stylesheet" href="style.css">
   <style>
     body{
-        background: linear-gradient(150deg, blue 40%, purple 60%);
+      background: linear-gradient(150deg, rgb(57, 57, 94) 40%, rgb(253, 6, 200) 60%);
         font-weight: bold;
         color: aliceblue;
     }
@@ -44,6 +44,22 @@
       margin-bottom: 20px;
       color: #333;
     }
+  .tour-details ul {
+    padding-left: 0;
+  }
+
+  .tour-details ul li {
+    padding: 8px 0;
+    list-style: none;
+  }
+
+  .tour-details ul li::before {
+    content: "\f00c";
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    margin-right: 10px;
+    color: #ffd700;
+  }
 
     input, textarea {
       width: 100%;
@@ -109,11 +125,11 @@
 </div>
 </div>
 
-<div class="container my-5">
-<h2>About Darjeeling</h2>
+<div class="container my-5 tour-details">
+<h2 style="color: black;">About Darjeeling</h2>
 <p>Darjeeling is famous for its tea plantations, stunning views of Kanchenjunga, and the UNESCO World Heritage Darjeeling Himalayan Railway.</p>
 
-<h3>Tour Package Includes</h3>
+<h3 style="color: black;">Tour Package Includes</h3>
 <ul>
 <li>Visit to Tiger Hill for sunrise</li>
 <li>Darjeeling Himalayan Railway ride</li>
@@ -122,7 +138,7 @@
 <li>Local guide and transportation</li>
 </ul>
 
-<h3>Price & Charges</h3>
+<h3 style="color: black;">Price & Charges</h3>
 <ul>
 <li>Hotel Stay (per night): ₹3,500 - ₹6,000</li>
 <li>Meals (per day): ₹1,000 - ₹1,500</li>
@@ -130,13 +146,10 @@
 <li>Total Estimated Package: ₹5,300 - ₹8,300 per person (2 days)</li>
 </ul>
 
-<h3>Itinerary</h3>
+<h3 style="color: black;">Itinerary</h3>
 <p><strong>Day 1:</strong> Arrival at Darjeeling, check-in, tea plantation tour.</p>
 <p><strong>Day 2:</strong> Tiger Hill sunrise, local sightseeing, depart.</p>
 
-<div class="text-center my-4">
-<a href="#contact" class="btn btn-success btn-lg">Book This Tour</a>
-</div>
 </div>
 
     <section id="contact" class="contact navbar-expand-lg text-center c">
