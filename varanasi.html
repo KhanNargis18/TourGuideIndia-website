@@ -1,384 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TourGuideIndia</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
-    <link rel="stylesheet" href="style.css" type="text/style">
-<style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-img {
-  max-width: 100%;
-  height: auto;
-  display: block;
-}
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Varanasi Ghats Tour - TourGuideIndia</title>
 
-.carousel-text {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center;
-  color: #fff;
-  width: 90%;
-}
-.carousel-text h1 {
-  font-size: clamp(1.5rem, 5vw, 3rem);
-}
-.carousel-text h4 {
-  font-size: clamp(1rem, 3vw, 1.5rem);
-}
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
 
-.destinations-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 1.5rem;
-}
-
-.guide-card {
-  min-height: auto;
-}
-.guide-card img {
-  width: 100px;
-  height: 100px;
-}
-
-.contact p, .contact a {
-  font-size: clamp(0.9rem, 2vw, 1.1rem);
-}
-
-.footer {
-  width: 100%;
-  background-color: #1e293b;
-  color: #fff;
-  text-align: center;
-}
-.footer p, .footer a {
-  font-size: clamp(0.8rem, 1.5vw, 1rem);
-}
-
-@media (max-width: 992px) {
-  .search {
-    width: 100%;
-    margin-top: 10px;
-  }
-  .navbar-nav {
-    text-align: center;
-  }
-}
-
-        
-        body {
-            font-family: 'Poppins', sans-serif;
-            background-color: #f8fafc;
-            color: #1e293b;
-            line-height: 1.6;
-        }
-        
-        header {
-            background: linear-gradient(to right, #9926dc, #0cd0ea);
-            color: white;
-            text-align: center;
-            padding: 2rem 1rem;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
-        
-        h1 {
-            font-size: 2.5rem;
-            margin-bottom: 0.5rem;
-        }
-        
-        .subtitle {
-            font-size: 1.2rem;
-            margin-bottom: 1rem;
-            opacity: 0.9;
-        }
-        
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 2rem 1rem;
-        }
-        
-        .controls {
-            display: flex;
-            justify-content: center;
-            margin-bottom: 2rem;
-            gap: 1rem;
-        }
-        
-        .control-btn {
-            padding: 0.5rem 1.5rem;
-            background-color: #f1f5f9;
-            border: none;
-            border-radius: 50px;
-            cursor: pointer;
-            font-weight: 500;
-            transition: all 0.3s ease;
-        }
-        
-        .control-btn.active, .control-btn:hover {
-            background-color: #dc2626;
-            color: white;
-        }
-        
-        .destinations-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 1.5rem;
-        }
-        
-        .destination-card {
-            background-color: white;
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        
-        .destination-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-        }
-        
-        .card-image {
-            height: 200px;
-            overflow: hidden;
-        }
-        
-        .card-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.5s ease;
-        }
-        
-        .destination-card:hover .card-image img {
-            transform: scale(1.05);
-        }
-        
-        .card-content {
-            padding: 1.5rem;
-        }
-        
-        .card-content h3 {
-            font-size: 1.4rem;
-            margin-bottom: 0.5rem;
-            color: #1e293b;
-        }
-        
-        .location {
-            display: flex;
-            align-items: center;
-            color: #64748b;
-            margin-bottom: 1rem;
-        }
-        
-        .location i {
-            margin-right: 0.5rem;
-        }
-        
-        .description {
-            color: #475569;
-            margin-bottom: 1.5rem;
-        }
-        
-        .rating {
-            display: flex;
-            align-items: center;
-            margin-bottom: 1rem;
-        }
-        
-        .stars {
-            color: #f59e0b;
-            margin-right: 0.5rem;
-        }
-        
-        .footer {
-            width: 100%;
-            text-align: center;
-            padding: 2rem;
-            margin-top: 2rem;
-            background-color: #1e293b;
-            color: white;
-        }
-        @media (max-width: 400px) {
-            h1 {
-                font-size: 2rem;
-            }
-            
-            .controls {
-                flex-wrap: wrap;
-            }
-            
-            .destinations-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-        
-        @media (max-width: 768px) {
-            h1 {
-                font-size: 2rem;
-            }
-            
-            .controls {
-                flex-wrap: wrap;
-            }
-            
-            .destinations-grid {
-                grid-template-columns: 1fr;
-            }
-        }@media (max-width: 992px) {
-            h1 {
-                font-size: 2rem;
-            }
-            
-            .controls {
-                flex-wrap: wrap;
-            }
-            
-            .destinations-grid {
-                grid-template-columns: 1fr;
-            }
-        }@media (max-width: 1200px) {
-            h1 {
-                font-size: 2rem;
-            }
-            
-            .controls {
-                flex-wrap: wrap;
-            }
-            
-            .destinations-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        .foot a{
-            text-decoration: none;
-            color: #f1f5f9;
-        }
-        .c{
-            background: linear-gradient(140deg,rgb(39, 39, 51) 40%, rgb(32, 16, 32) 60%);
-            color: #f1f5f9;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-            border-radius: 20px;
-        }
-        .c a{
-            text-decoration: none;
-            color: #f1f5f9;
-        }
-        .guide-card img {
-      width: 120px;
-      height: 120px;
-      object-fit: cover;
-      border-radius: 50%;
-      margin: 0 auto 15px;
+  <style>
+    body {
+      background: linear-gradient(150deg, rgb(57, 57, 94) 40%, rgb(253, 6, 200) 60%);
+      font-weight: bold;
+      color: aliceblue;
+      font-family: 'Poppins', sans-serif;
     }
 
+    img {
+      border-radius: 10px;
+    }
 
-    .navbar-toggler {
-    position: relative;
-    width: 40px;
-    height: 30px;
-    border: none;
-    background: none;
-    outline: none;
-    cursor: pointer;
-}
+    .Heading {
+      border-radius: 20px;
+    }
 
-.navbar-toggler-icon {
-    position: relative;
-    display: block;
-    width: 100%;
-    height: 4px;
-    background-color: white;
-    border-radius: 2px;
-    transition: all 0.4s ease;
-}
+    /* Explore Now button */
+    .carousel-text {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+    }
+    .carousel-text .btn {
+      font-size: 1.2rem;
+      padding: 10px 20px;
+    }
 
-.navbar-toggler-icon::before,
-.navbar-toggler-icon::after {
-    content: '';
-    position: absolute;
-    width: 100%;
-    height: 4px;
-    background-color: white;
-    border-radius: 2px;
-    transition: all 0.4s ease;
-}
+    /* Tour Details */
+    .tour-details ul {
+      padding-left: 0;
+    }
+    .tour-details ul li {
+      padding: 8px 0;
+      list-style: none;
+    }
+    .tour-details ul li::before {
+      content: "✔ ";
+      color: #ffd700;
+    }
 
-.navbar-toggler-icon::before {
-    top: -10px;
-}
-
-.navbar-toggler-icon::after {
-    bottom: -10px;
-}
-
-/* When toggled */
-.navbar-toggler.collapsed .navbar-toggler-icon {
-    background-color: white; /* Middle bar */
-}
-
-.navbar-toggler:not(.collapsed) .navbar-toggler-icon {
-    background-color: transparent; /* Hide middle bar */
-}
-
-.navbar-toggler:not(.collapsed) .navbar-toggler-icon::before {
-    transform: rotate(45deg) translate(7px, 7px);
-}
-
-.navbar-toggler:not(.collapsed) .navbar-toggler-icon::after {
-    transform: rotate(-45deg) translate(7px, -7px);
-}
-p{
-    padding: 10px;
-}
-h1{
-    padding: 10px;
-}
-h2{
-    padding: 10px;
-}
-h3{
-    padding: 10px;
-}
-h4{
-    padding: 10px;
-}
-i span{
-    padding: 10px;
-}
-.contact-container {
+    /* Contact Form Center */
+    .contact-container {
       background: white;
       padding: 30px;
       border-radius: 12px;
       box-shadow: 0 4px 20px rgba(0,0,0,0.2);
-      width: 90%;
+      width: 100%;
       max-width: 500px;
+      margin: auto;
     }
-    .contact .container {
-  display: flex;  
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-}
-
-
-    h2 {
+    .contact-container h2 {
       text-align: center;
       margin-bottom: 20px;
       color: #333;
     }
-
     input, textarea {
       width: 100%;
       padding: 12px;
@@ -387,424 +74,117 @@ i span{
       border-radius: 8px;
       resize: none;
     }
-
-    .contact button{
-        padding: 10px;
-        background: linear-gradient(to right, blue , purple);
-        border-radius: 10px;
-        border: none;
-        color: white;
-
+    .contact button {
+      padding: 10px;
+      background: linear-gradient(to right, blue , purple);
+      border-radius: 10px;
+      border: none;
+      color: white;
+      width: 100%;
+    }
+    .contact button:hover {
+      background-color: rgb(0, 255, 170);
+      color: black;
     }
 
-
-
-    @media (max-width: 480px) {
-      .contact-container {
-        padding: 20px;
-      }
+    iframe {
+      border-radius: 10px;
+      margin-top: 20px;
     }
-    .nav-link li{
-        padding: 10px;
-        width: 10px;
-    }
-    </style>
-
+  </style>
 </head>
 <body>
 
-     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
     <div class="container">
-      <a class="navbar-brand" href="#">
-                <span class="text-tour">Tour</span>
-                <span class="text-guide">Guide</span>
-                <span class="text-india">India</span>
+      <a class="navbar-brand fw-bold" href="index.html">
+        <span class="text-tour">Tour</span>
+        <span class="text-guide">Guide</span>
+        <span class="text-india">India</span>
       </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-</button>
-<form class="search d-flex ms-auto" role="search" onsubmit="return false;">
-  <input id="searchInput" class="form-control me-2" type="search" placeholder="Search for a place..." aria-label="Search">
-</form>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link py-3" aria-current="page" href="#">Home</a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle py-3" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Tour Packages
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">Domestic Tours</a></li>
-                            <li><a class="dropdown-item" href="#">Weekend Gateways</a></li>
-                            <li><a class="dropdown-item" href="#">Adventure Tours</a></li>
-                            <li><a class="dropdown-item" href="#">Family Packages</a></li>
-                            <li><a class="dropdown-item" href="#">Luxury Packages</a></li>
-                            <li><hr class="dropdown-divider"></li>
-                            <li><a class="dropdown-item" href="#">Custom Tour Packages</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle py-3" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Destinations
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">Popular cities</a></li>
-                            <li><a class="dropdown-item" href="#">Beaches</a></li>
-                            <li><a class="dropdown-item" href="#">Mountains</a></li>
-                            <li><a class="dropdown-item" href="#">Heritage sites</a></li>
-                            <li><a class="dropdown-item" href="#">Wildlife parks</a></li>
-                        </ul>
-                    </li>
-                
-                    <li class="nav-item py-2 ">
-                        <a class="nav-link" href="#">
-                            About_Us
-                        </a>
-                    </li>
-                    <ul>
-                    <li class="nav-item">
-                        <a class="nav-link py-3" href="#">Blog</a>
-                    </li>
-                    </ul>
-                   <button class="btn btn-outline-success" type="Contact Us"><a class="nav-link" href="#contact" style="text-decoration: none;"> Contact Us</a> </button>
-                
-              
-
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="index.html#guides">Guides</a></li>
+          <li class="nav-item"><a class="nav-link" href="index.html#contact">Contact</a></li>
+        </ul>
       </div>
     </div>
   </nav>
 
-
-    <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000" data-bs-pause="hover">
-        <div class="carousel-inner" >
-            <div class="carousel-item active">
-                <img src="Media/hero img 1.jpg" class="d-block w-100" alt="...">
-            </div>
-            <div class="carousel-item">
-                <img src="Media/hero img 2.jpg" class="d-block w-100" alt="...">
-            </div>
-            <div class="carousel-item">
-                <img src="Media/hero img 3.jpg" class="d-block w-100" alt="...">
-            </div>
-            <div class="carousel-item">
-                <img src="Media/hero img 4.jpg" class="d-block w-100" alt="...">
-            </div>
-            <div class="carousel-item">
-                <img src="Media/hero img 5.jpg" class="d-block w-100" alt="...">
-            </div>
-            <div class="carousel-item">
-                <img src="Media/hero img 6.jpg" class="d-block w-100" alt="...">
-            </div>
-        </div>
-    </div>
+  <!-- Hero Section (Full Image like Taj Mahal page) -->
+  <div class="container-fluid p-0 position-relative">
+<img src="assets/images/varanasi1.avif" class="img-fluid w-100" alt="Varanasi Ghat">
     <div class="carousel-text">
-        <h1 class="py-3">Travel With the Best Tour Operators in India</h1>
-        <h4 class="py-3">Be it weekend gateways in India adventures, we,ve got you covered from tickets to hotels.</h4>
-        <button type="button" class="btn btn-success m-10 p-2">Explore Now</button>
+      <button type="button" class="btn btn-success">
+        <a href="#varanasi" style="text-decoration: none; color:white;">Explore Now</a>
+      </button>
     </div>
-
-    <header>
-        <h1>TourGuideIndia</h1>
-        <p class="subtitle">Discover the most beautiful tourist destinations</p>
-    </header>
-
-    
-    <div class="container ">
-        <div class="controls">
-            <button class="btn btn-outline-dark control-btn active">All</button>
-            <button class="btn btn-outline-dark control-btn">Historical</button>
-            <button class="btn btn-outline-dark control-btn">Beaches</button>
-            <button class="btn btn-outline-dark control-btn">Mountains</button>
-            <button class="btn btn-outline-dark control-btn">Spiritual</button>
-        </div>
-        
-        
-        <div class="destinations-grid">
-            <div class="destination-card" data-category="historical">
-                <a href="taj.html" style="text-decoration: none;">
-                <div class="card-image">
-                    <img src="https://karryon.com.au/wp-content/uploads/2014/12/shutterstock_120633745.jpg" alt="The iconic white marble mausoleum Taj Mahal with reflective pool in front">
-                </div>
-                <div class="card-title">
-                    <h3>Taj Mahal</h3>
-                    <div class="location">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <span class="py-3">Agra, Uttar Pradesh</span>
-                    </div>
-                    <p class="description py-3">An ivory-white marble mausoleum and one of the seven wonders of the world, built by Mughal emperor Shah Jahan.</p>
-                    <div class="rating">
-                        <div class="stars">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                        <span class="d-block mx-auto">4.9 (12k reviews)</span>
-                    </div>
-                    </a>
-                </div>
-            </div>
-            
-            <div class="destination-card" data-category="spiritual">
-                <div class="card-image">
-                    <a href="varanasi.html" style="text-decoration: none;"><img src="https://tse2.mm.bing.net/th/id/OIP.8owFcz8tyNVP8zND_gRVCgHaFJ?pid=Api&P=0&h=180" alt="Evening ceremony on the ghats of Varanasi with lamps and devotees">
-                </div>
-                <div class="card-title">
-                    <h3>Varanasi Ghats</h3>
-                    <div class="location">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <span class="py-3">Varanasi, Uttar Pradesh</span>
-                    </div>
-                    <p class="description py-3">One of the oldest living cities in the world, known for its spiritual significance and beautiful Ganga Aarti ceremony.</p>
-                    <div class="rating">
-                        <div class="stars">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star-half-alt"></i>
-                        </div>
-                        <span class="d-block mx-auto">4.7 (8.5k reviews)</span>
-                        
-                    </div>
-                    </a>
-                </div>
-            </div>
-            
-            <div class="destination-card" id="destination-card" data-category="beaches">
-                <div class="card-image">
-                    <a href="goa.html" style="text-decoration: none;">
-                    <img src="https://tse2.mm.bing.net/th/id/OIP.PBNEx1qdnBxCXUcxL90naQHaE6?pid=Api&P=0&h=180" alt="Sunny beach in Goa with golden sand and palm trees">
-                </div>
-                <div class="card-title">
-                    <h3>Goa Beaches</h3>
-                    <div class="location">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <span class="py-3">Goa</span>
-                    </div>
-                    <p class="description py-3">Famous for its pristine beaches, Portuguese heritage, vibrant nightlife and delicious seafood cuisine.</p>
-                    <div class="rating">
-                        <div class="stars">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                        <span class="d-block mx-auto">4.8 (15k reviews)</span>
-                        
-                    </div></a>
-                </div>
-            </div>
-            
-            <div class="destination-card" data-category="beaches">
-                <div class="card-image">
-                    <a href="kerla.html" style="text-decoration: none;">
-                    <img src="https://2.bp.blogspot.com/-6462cJoeLeY/V15NrMaruwI/AAAAAAACNCw/7HykZP4dGwcH9RLtnYsK4aHj4UKiZFRRgCLcB/s1600/2.JPG" alt="Serene backwaters of Kerala with houseboats and coconut trees">
-                </div>
-                <div class="card-title">
-                    <h3 class="py-3">Kerala Backwaters</h3>
-                    <div class="location">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <span class="py-3">Kerala</span>
-                    </div>
-                    <p class="description py-3">A network of interconnected canals, rivers, and lagoons perfect for houseboat cruises and experiencing tranquil nature.</p>
-                    <div class="rating">
-                        <div class="stars">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star-half-alt"></i>
-                        </div>
-                        <span class="d-block mx-auto">4.8 (9.2k reviews)</span>
-                        
-                    </div></a>
-                </div>
-            </div>
-            
-            <div class="destination-card" data-category="historical">
-                <div class="card-image">
-                    <a href="jaipur.html" style="text-decoration: none;">
-                    <img src="https://tse2.mm.bing.net/th/id/OIP.Y6OOUI0qEEs-Dy5aOcRU7QHaE7?pid=Api&P=0&h=180" alt="Amber Fort in Jaipur with majestic architecture and mountain backdrop">
-                </div>
-                <div class="card-title">
-                    <h3>Jaipur Forts</h3>
-                    <div class="location">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <span class="py-3">Jaipur, Rajasthan</span>
-                    </div>
-                    <p class="description py-3">The Pink City is famous for its stunning forts and palaces showcasing Rajasthani architecture and royal heritage.</p>
-                    <div class="rating">
-                        <div class="stars">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                        <span class="d-block mx-auto">4.7 (10k reviews)</span>
-                        
-                    </div></a>
-                </div>
-            </div>
-            
-            <div class="destination-card" data-category="mountains">
-                <div class="card-image">
-                    <a href="darjeeling.html" style="text-decoration: none;">
-                    <img src="https://ocean6holidays.com/wp-content/uploads/2019/04/tea-gardens-of-darjeeling.jpg" alt="Scenic tea gardens of Darjeeling with Himalayan mountains in background">
-                </div>
-                <div class="card-title">
-                    <h3>Darjeeling</h3>
-                    <div class="location">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <span class="py-3">West Bengal</span>
-                    </div>
-                    <p class="description py-3">Famous for its tea plantations, stunning views of Kanchenjunga, and the UNESCO World Heritage Darjeeling Himalayan Railway.</p>
-                    <div class="rating">
-                        <div class="stars">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star-half-alt"></i>
-                        </div>
-                        <span class="d-block mx-auto">4.6 (7.8k reviews)</span>
-                        
-                    </div></a>
-                </div>
-            </div>
-        </div>
+    <div class="text-center p-4 bg-dark text-white Heading">
+      <h1>Varanasi Ghats</h1>
+      <p>Varanasi, Uttar Pradesh</p>
     </div>
-
-
-
-  <section id="guides" class="container-fluid py-5 ">
-    <h2 class="text-center mb-4 fw-bold">Meet Our Guides</h2>
-    <div class="row g-4">
-      <div class="col-md-4">
-        <div class="card guide-card text-center shadow p-3">
-          <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Guide 1">
-          <h5 class="fw-bold">AAA AAA</h5>
-          <p>History Expert</p>
-          <p>Email: a@1.com</p>
-          <p>Phone: +91 9876543210</p>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="card guide-card text-center shadow p-3">
-          <img src="https://randomuser.me/api/portraits/men/33.jpg" alt="Guide 2">
-          <h5 class="fw-bold">BBB BBB</h5>
-          <p>Adventure Specialist</p>
-          <p>Email: b@2.com</p>
-          <p>Phone: +91 1235467890</p>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="card guide-card text-center shadow p-3">
-          <img src="https://randomuser.me/api/portraits/men/34.jpg" alt="Guide 3">
-          <h5 class="fw-bold">CCC CCC</h5>
-          <p>Cultural Tours</p>
-          <p>Email: c@3.com</p>
-          <p>Phone: +911234567890</p>
-
-        </div>
-      </div>
-    </div>
-  </section>
-
-    <section id="contact" class="contact navbar-expand-lg text-center c">
-    <div class="container">
-      <h2 class="fw-bold mb-4" style="color: #f1f5f9;">Contact Us</h2>
-      <p>Email: <a href="mailto:info@incredibleindia.com">info@incredibleindia.com</a></p>
-      <p>Phone: +91 1234567890</p>
-      
-  <div class="contact-container" id="contact">
-    <h2>Contact Us</h2>
-    <form id="contactForm justify-content-center">
-      <input type="text" id="name" placeholder="Your Name" required>
-      <input type="email" id="email" placeholder="Your Email" required>
-      <input type="text" id="subject" placeholder="Subject" required>
-      <textarea id="message" rows="5" placeholder="Your Message" required></textarea>
-      <button type="submit">Send Message</button><br><br><br>
-
-
-      
-    </form>
-    <div class="mt-3 d-flex justify-content-center">
-        <a href="#"><img src="https://img.icons8.com/color/48/facebook.png"/></a>
-        <a href="#"><img src="https://img.icons8.com/color/48/instagram-new.png"/></a>
-        <a href="#"><img src="https://img.icons8.com/color/48/twitter-squared.png"/></a>
-
   </div>
 
+  <!-- Tour Details -->
+  <div class="container my-5 tour-details" id="varanasi">
+    <h2>About Varanasi</h2>
+    <p>Varanasi is one of the oldest living cities in the world, known for its spiritual significance and the mesmerizing Ganga Aarti ceremony that takes place every evening on the ghats of the holy river Ganga.</p>
+
+    <h3 style="color: black;">Tour Package Includes</h3>
+    <ul>
+      <li>Boat ride at Ganga Ghats</li>
+      <li>Visit Kashi Vishwanath Temple</li>
+      <li>Hotel stay and breakfast</li>
+      <li>Local guide for spiritual tour</li>
+      <li>Evening Ganga Aarti experience</li>
+    </ul>
+
+    <h3 style="color: black;">Price & Charges</h3>
+    <ul>
+      <li>Hotel Stay (per night): ₹2,500 - ₹4,000</li>
+      <li>Meals (per day): ₹800 - ₹1,200</li>
+      <li>Guided Tour & Boat Ride: ₹1,000 per person</li>
+      <li>Total Estimated Package: ₹4,300 - ₹6,200 per person (2 days)</li>
+    </ul>
+
+    <h3 style="color: black;">Itinerary</h3>
+    <p><strong>Day 1:</strong> Arrival at Varanasi, check-in, visit temples, evening Ganga Aarti.</p>
+    <p><strong>Day 2:</strong> Morning boat ride, explore local markets, and departure.</p>
+
+    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d237.92451051981195!2d56.6171706!3d17.4217588!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x398e2db76febcf4d%3A0x68131710853ff0b5!2sVaranasi%2C%20Uttar%20Pradesh!5e0!3m2!1sen!2sin!4v1758116802275!5m2!1sen!2sin"
+      width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+  </div>
+
+  <!-- Contact Section (Centered Form) -->
+  <section id="contact" class="contact text-center my-5">
+    <div class="container">
+      <h2 class="fw-bold mb-4" style="color: #f1f5f9;">Contact Us</h2>
+      <div class="contact-container">
+        <h2>Send a Message</h2>
+        <form id="contactForm">
+          <input type="text" id="name" placeholder="Your Name" required>
+          <input type="email" id="email" placeholder="Your Email" required>
+          <input type="text" id="subject" placeholder="Subject" required>
+          <textarea id="message" rows="5" placeholder="Your Message" required></textarea>
+          <button type="submit">Send Message</button>
+        </form>
       </div>
     </div>
   </section>
 
-    <div class="footer py-3">
-        
-    <footer class="container-fluid text-center py-3">
-    <div class="container-fluid foot expand-lg py-3">
-      <p>© 2025 TourGuideIndia | All Rights Reserved</p>
-      <p><a  href="#places">Places</a> | <a href="#destinations">Destinations</a> | <a href="#guides">Guides</a> | <a href="#contact">Contact</a></p>
-    </div>
-    </div>
+  <!-- Footer -->
+  <footer class="bg-dark text-white text-center py-3">
+    <p>© 2025 TourGuideIndia | All Rights Reserved</p>
+  </footer>
 
-    <script>
-        document.querySelectorAll('.control-btn').forEach(button => {
-            button.addEventListener('click', function() {
-                document.querySelectorAll('.control-btn').forEach(btn => {
-                    btn.classList.remove('active');
-                });
-                this.classList.add('active');
-                console.log('Filter selected:', this.textContent);
-            });
-        });
-const searchInput = document.getElementById('searchInput');
-const destinationCards = document.querySelectorAll('.destination-card');
-
-searchInput.addEventListener('keyup', () => {
-    const filter = searchInput.value.toLowerCase().trim();
-
-    destinationCards.forEach(card => {
-        const title = card.querySelector('h3').textContent.toLowerCase();
-        const description = card.querySelector('.description').textContent.toLowerCase();
-
-        if (title.includes(filter) || description.includes(filter)) {
-            card.style.display = "block";
-        } else {
-            card.style.display = "none";
-        }
-    });
-});
-
-
-  const buttons = document.querySelectorAll('.control-btn');
-  const cards = document.querySelectorAll('.destination-card');
-
-  buttons.forEach(button => {
-    button.addEventListener('click', function() {
-      buttons.forEach(btn => btn.classList.remove('active'));
-      this.classList.add('active');
-
-      const filter = this.textContent.toLowerCase();
-
-      cards.forEach(card => {
-        const category = card.getAttribute('data-category');
-        card.style.display = (filter === 'all' || category === filter) ? 'block' : 'none';
-      });
-    });
-  });
-
-
-</script>
-
-</body>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
