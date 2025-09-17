@@ -6,161 +6,188 @@
 <title>Kerala Backwaters Tour - TourGuideIndia</title>
 <link rel="stylesheet" href="style.css">
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
-</head>
+
 <style>
-    body{
-        background: linear-gradient(150deg, blue 40%, purple 60%);
-        font-weight: bold;
-        color: aliceblue;
-    }
-  .Heading{
+  body {
+    background: linear-gradient(150deg, rgb(57, 57, 94) 40%, rgb(253, 6, 200) 60%);
+    font-weight: bold;
+    color: aliceblue;
+  }
+
+  .Heading {
     border-radius: 20px;
   }
-  
-  img{
+
+  img {
     border-radius: 10px;
-    width: 400px;
-    height: 400px;
   }
-  
-.contact-container {
-      background: white;
-      padding: 30px;
-      border-radius: 12px;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.2);
-      width: 90%;
-      max-width: 500px;
-    }
-    .contact .container {
-  display: flex;  
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-}
 
+  .carousel-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+  }
 
-    h2 {
-      text-align: center;
-      margin-bottom: 20px;
-      color: #333;
-    }
+  .carousel-text .btn {
+    font-size: 1.2rem;
+    padding: 10px 20px;
+  }
 
-    input, textarea {
-      width: 100%;
-      padding: 12px;
-      margin: 10px 0;
-      border: 1px solid #ccc;
-      border-radius: 8px;
-      resize: none;
-    }
+  .tour-details ul {
+    padding-left: 0;
+  }
 
-    .contact button{
-        padding: 10px;
-        background: linear-gradient(to right, blue , purple);
-        border-radius: 10px;
-        border: none;
-        color: white;
+  .tour-details ul li {
+    padding: 8px 0;
+    list-style: none;
+  }
 
-    }
+  .tour-details ul li::before {
+    content: "\f00c";
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    margin-right: 10px;
+    color: #ffd700;
+  }
 
+  /* Contact Section */
+  .contact-container {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+    width: 90%;
+    max-width: 500px;
+    margin: auto;
+  }
 
+  .contact-container h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #000;
+  }
 
-    @media (max-width: 480px) {
-      .contact-container {
-        padding: 20px;
-      }
-    }
-    .nav-link li{
-        padding: 10px;
-        width: 10px;
-    }
+  input, textarea {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    resize: none;
+  }
+
+  .contact button {
+    padding: 10px;
+    background: linear-gradient(to right, blue, purple);
+    border-radius: 10px;
+    border: none;
+    color: white;
+    width: 100%;
+  }
+
+  .btn-success {
+    background-color: green !important;
+    border: none;
+  }
+
+  .btn-success:hover {
+    background-color: #00ffab !important;
+    color: black !important;
+  }
 
 </style>
+</head>
 <body>
 
+<!-- Navbar -->
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-    <div class="container">
-      <a class="navbar-brand" href="#">
-                <span class="text-tour">Tour</span>
-                <span class="text-guide">Guide</span>
-                <span class="text-india">India</span>
-      </a>
+  <div class="container">
+    <a class="navbar-brand" href="#">
+      <span class="text-tour">Tour</span>
+      <span class="text-guide">Guide</span>
+      <span class="text-india">India</span>
+    </a>
 
-<button class="navbar-toggler" type="button" data-bs-toggle ="collapse" data-bs-target="#navbarNav">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ms-auto">
-                <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-                <li class="nav-item"><a class="nav-link" href="index.html#guides">Guides</a></li>
-                <li class="nav-item"><a class="nav-link" href="index.html#contact">Contact</a></li>
-            </ul>
-        </div>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="index.html#guides">Guides</a></li>
+        <li class="nav-item"><a class="nav-link" href="index.html#contact">Contact</a></li>
+      </ul>
     </div>
+  </div>
 </nav>
 
-<div class="container-fluid p-0">
-<img src="assets/images/kerla.avif" width="400" height="400" class="img-fluid w-100" alt="Kerala Backwaters">
-<div class="text-center p-4 bg-dark text-white Heading">
-<h1>Kerala Backwaters</h1>
-<p>Kerala</p>
-</div>
-</div>
-
-<div class="container my-5">
-<h2>About Kerala Backwaters</h2>
-<p>A network of interconnected canals, rivers, and lagoons perfect for houseboat cruises and experiencing tranquil nature.</p>
-
-<h3>Tour Package Includes</h3>
-<ul>
-<li>Houseboat cruise in backwaters</li>
-<li>Village tour and local culture</li>
-<li>Hotel stay and breakfast</li>
-<li>Traditional Kerala cuisine on board</li>
-<li>Evening cultural performance</li>
-</ul>
-
-<h3>Price & Charges</h3>
-<ul>
-<li>Houseboat Stay (per night): ₹6,000 - ₹10,000</li>
-<li>Meals (per day): ₹1,500 - ₹2,500</li>
-<li>Local Tour & Entry Fees: ₹1,000 per person</li>
-<li>Total Estimated Package: ₹8,500 - ₹13,500 per person (2 days)</li>
-</ul>
-
-<h3>Itinerary</h3>
-<p><strong>Day 1:</strong> Arrival at Kerala, board houseboat, cruise backwaters, enjoy local cuisine.</p>
-<p><strong>Day 2:</strong> Morning village tour, cultural performance, depart.</p>
-
-<div class="text-center my-4">
-<a href="#contact" class="btn btn-success btn-lg">Book This Tour</a>
-</div>
+<!-- Hero Section -->
+<div class="container-fluid p-0 position-relative">
+  <img src="assets/images/kerla.avif" class="img-fluid w-100" alt="Kerala Backwaters">
+  <div class="carousel-text">
+    <button type="button" class="btn btn-success">
+      <a href="#kerala" style="text-decoration: none; color:white;">Explore Now</a>
+    </button>
+  </div>
+  <div class="text-center p-4 bg-dark text-white Heading">
+    <h1>Kerala Backwaters</h1>
+    <p>Kerala</p>
+  </div>
 </div>
 
-    <section id="contact" class="contact navbar-expand-lg text-center c">
-    <div class="container">
-      <h2 class="fw-bold mb-4" style="color: #f1f5f9;">Contact Us</h2>
-      <p>Email: <a href="mailto:info@incredibleindia.com">info@incredibleindia.com</a></p>
-      <p>Phone: +91 1234567890</p>
-      
-  <div class="contact-container" id="contact">
-    <h2>Contact Us</h2>
-    <form id="contactForm justify-content-center">
-      <input type="text" id="name" placeholder="Your Name" required>
-      <input type="email" id="email" placeholder="Your Email" required>
-      <input type="text" id="subject" placeholder="Subject" required>
-      <textarea id="message" rows="5" placeholder="Your Message" required></textarea>
-      <button type="submit">Send Message</button><br><br><br>
+<!-- Package Details -->
+<div class="container my-5 tour-details" id="kerala">
+  <h2>About Kerala Backwaters</h2>
+  <p>A network of interconnected canals, rivers, and lagoons perfect for houseboat cruises and experiencing tranquil nature.</p>
 
+  <h3 style="color: black;">Tour Package Includes</h3>
+  <ul>
+    <li>Houseboat cruise in backwaters</li>
+    <li>Village tour and local culture</li>
+    <li>Hotel stay and breakfast</li>
+    <li>Traditional Kerala cuisine on board</li>
+    <li>Evening cultural performance</li>
+  </ul>
 
+  <h3 style="color: black;">Price & Charges</h3>
+  <ul>
+    <li>Houseboat Stay (per night): ₹6,000 - ₹10,000</li>
+    <li>Meals (per day): ₹1,500 - ₹2,500</li>
+    <li>Local Tour & Entry Fees: ₹1,000 per person</li>
+    <li>Total Estimated Package: ₹8,500 - ₹13,500 per person (2 days)</li>
+  </ul>
+
+  <h3 style="color: black;">Itinerary</h3>
+  <p><strong>Day 1:</strong> Arrival at Kerala, board houseboat, cruise backwaters, enjoy local cuisine.</p>
+  <p><strong>Day 2:</strong> Morning village tour, cultural performance, depart.</p>
+</div>
+
+<!-- Contact Section -->
+<section id="contact" class="contact text-center">
+  <div class="container">
+    <h2 class="fw-bold mb-4 text-white">Contact Us</h2>
+    <p>Email: <a href="mailto:info@incredibleindia.com" class="text-warning">info@incredibleindia.com</a></p>
+    <p>Phone: <span class="text-warning">+91 1234567890</span></p>
+
+    <div class="contact-container">
+      <h2>Get in Touch</h2>
+      <form id="contactForm">
+        <input type="text" id="name" placeholder="Your Name" required>
+        <input type="email" id="email" placeholder="Your Email" required>
+        <input type="text" id="subject" placeholder="Subject" required>
+        <textarea id="message" rows="5" placeholder="Your Message" required></textarea>
+        <button type="submit">Send Message</button>
+      </form>
     </div>
-    </form>
+  </div>
 </section>
- <!-- Footer -->
-  <footer class="bg-dark text-white text-center py-3">
-    <p>© 2025 TourGuideIndia | All Rights Reserved</p>
-  </footer>
 
+<!-- Footer -->
+<footer class="bg-dark text-white text-center py-3">
+  <p>© 2025 TourGuideIndia | All Rights Reserved</p>
+</footer>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
 </body>
